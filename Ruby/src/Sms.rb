@@ -48,14 +48,14 @@ class Sms
     # Set the API version
     def setVersion(version)
         @@version = version
-        return self
+        return self 
     end
 
     # Parse SMS
     def method_name
     #Subscriber number
       msisdn = params['inboundSMSMessageList']['inboundSMSMessage'].first['senderAddress']
-      msisdn = msisdn[7..msisdn.length]
+      @@msisdn = msisdn[7..msisdn.length]
     end
 
 end
