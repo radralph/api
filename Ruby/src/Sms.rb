@@ -50,4 +50,12 @@ class Sms
         @@version = version
         return self
     end
+
+    # Parse SMS
+    def method_name
+    #Subscriber number
+      msisdn = params['inboundSMSMessageList']['inboundSMSMessage'].first['senderAddress']
+      msisdn = msisdn[7..msisdn.length]
+    end
+
 end
